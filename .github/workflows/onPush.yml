@@ -6,9 +6,15 @@ on:
         branches:
             - main
         
+defaults:
+  run:
+    shell: bash
+        
 jobs:
     hello-world:
         name: Say Hello From onPush
+        runs-on: ubuntu-latest
+        
         steps:
             - name: Echo hello
               run: echo "Hello world from onpush"
