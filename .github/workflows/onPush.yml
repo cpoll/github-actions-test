@@ -25,5 +25,5 @@ jobs:
                   curl -X POST https://api.github.com/repos/cpoll/github-actions-test/dispatches \
                   -H "Accept: application/vnd.github.v3+json" \
                   -u ${{ env.ACTIONS_PAT }} \
-                  --data '{"event_type": "event1", "client_payload": { "message": "Hello from onPush" }}'
+                  --data '{"event_type": "event1"}'
             
