@@ -4,10 +4,16 @@ name: Event 1
 on:
     repository_dispatch:
         types: [triggerEvent1]
-        
+
+defaults:
+  run:
+    shell: bash
+
 jobs:
     hello-world:
         name: Say Hello
+        runs-on: ubuntu-latest
+        
         steps:
             - name: Echo hello
               run: echo "Hello world"
