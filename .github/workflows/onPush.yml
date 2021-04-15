@@ -1,0 +1,15 @@
+---
+name: On Push
+
+on:
+    push:
+        branches:
+            - main
+        
+jobs:
+    hello-world:
+        name: Say Hello From onPush
+        steps:
+            - name: Echo hello
+              run: echo "Hello world from onpush"
+            
