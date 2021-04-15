@@ -18,4 +18,12 @@ jobs:
         steps:
             - name: Echo hello
               run: echo "Hello world from onpush"
+              
+            - name: Trigger deployment in GitHub Actions Spike repo
+              if: contains(github.ref, 'main')
+              run: |
+                  curl -X POST https://api.github.com/repos/cpoll/github-actions-test/dispatches \
+                  -H "Accept: application/vnd.github.v3+json" \
+                  -u ${{ env.ACTIONS_PAT }} \
+                  --data '{"event_type": "event1", "client_payload": { "message": "Hello from onPush" }}'
             
