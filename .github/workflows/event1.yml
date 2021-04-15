@@ -1,0 +1,14 @@
+---
+name: Event 1
+
+on:
+    repository_dispatch:
+        types: [triggerEvent1]
+        
+jobs:
+    hello-world:
+        name: Say Hello
+        steps:
+            - name: Echo hello
+              run: echo "Hello world"
+            
