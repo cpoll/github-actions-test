@@ -18,7 +18,7 @@ jobs:
         
         steps:
             - name: Echo hello
-              run: echo "Hello world from onpush"
+              run: echo "Hello world from onpush on test-push-source branch"
               
 #             - name: Trigger deployment in GitHub Actions Spike repo
 #               if: contains(github.ref, 'main')
