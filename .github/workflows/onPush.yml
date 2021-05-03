@@ -6,6 +6,10 @@ on:
         branches:
             - main
             - test*
+            
+    pull_request:
+        branches:
+            - main
         
 defaults:
   run:
