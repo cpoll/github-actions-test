@@ -5,12 +5,12 @@ on:
     push:
         branches:
             - main
-            - test*
+            - test/**
             
     pull_request:
         branches:
             - main
-            - test*
+            - test/**
         
 defaults:
   run:
