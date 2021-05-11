@@ -27,12 +27,13 @@ jobs:
               
             - name: get git diff
               run: >
-                echo "\n\nmethod 1\n"
+                printf "\n\nmethod 1\n\n"
                 git diff --name-only
-                echo "\n\nmethod 2\n"
+                printf "\n\nmethod 2\n\n"
                 git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
-                echo "\n\nmethod 3\n"
+                printf "\n\nmethod 3\n\n"
                 # GH API: https://docs.github.com/en/rest/reference/pulls#list-pull-requests-files
+                echo "git sha: ${{ github.sha }}"
               
 #             - name: Trigger deployment in GitHub Actions Spike repo
 #               if: contains(github.ref, 'main')
