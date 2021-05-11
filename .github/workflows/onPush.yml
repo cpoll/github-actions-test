@@ -25,6 +25,15 @@ jobs:
             - name: Echo hello
               run: echo "Hello world from onpush"
               
+            - name: get git diff
+              run: >
+                echo "\n\nmethod 1\n"
+                git diff --name-only
+                echo "\n\nmethod 2\n"
+                git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
+                echo "\n\nmethod 3\n"
+                # GH API: https://docs.github.com/en/rest/reference/pulls#list-pull-requests-files
+              
 #             - name: Trigger deployment in GitHub Actions Spike repo
 #               if: contains(github.ref, 'main')
 #               run: |
