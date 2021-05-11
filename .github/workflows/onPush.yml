@@ -26,7 +26,7 @@ jobs:
               run: echo "Hello world from onpush"
               
             - name: get git diff
-              run: >
+              run: |
                 printf "\n\nmethod 1\n\n"
                 git diff --name-only
                 printf "\n\nmethod 2\n\n"
