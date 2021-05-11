@@ -31,9 +31,11 @@ jobs:
             - name: get git diff
               run: |
                 printf "\n\nmethod 1\n\n"
-                git diff --name-only
+                m1=$(git diff --name-only)
+                echo $m1
                 printf "\n\nmethod 2\n\n"
-                git diff-tree --no-commit-id --name-only -r ${{ github.sha }}
+                m2=$(git diff-tree --no-commit-id --name-only -r ${{ github.sha }})
+                echo $m2
                 printf "\n\nmethod 3\n\n"
                 # GH API: https://docs.github.com/en/rest/reference/pulls#list-pull-requests-files
                 echo "git sha: ${{ github.sha }}"
