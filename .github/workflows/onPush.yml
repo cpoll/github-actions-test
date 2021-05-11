@@ -38,7 +38,14 @@ jobs:
                 echo $m2
                 printf "\n\nmethod 3\n\n"
                 git diff --name-only ${{ github.event.before }}..${{ github.event.after }}
+                printf "\n\nmethod 3\n\n"
+                git diff --name-only ${{ github.event.before }}..${{ github.event.after }}
+                printf "\n\nmethod 4\n\n"
+                git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }} ${{ github.sha }}
+                printf "\n\nmethod 5\n\n"
+                git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }}..${{ github.sha }}
                 # GH API: https://docs.github.com/en/rest/reference/pulls#list-pull-requests-files
+                
                 echo "git sha: ${{ github.sha }}"
                 echo "git before/after: ${{ github.event.before }}..${{ github.event.after }}"
               
