@@ -25,8 +25,8 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v2
               
-            - name: Debug github object
-              run: echo ${{ toJson(github) }}
+            # - name: Debug github object
+            #  run: echo ${{ toJson(github) }}
               
             - name: Run hello.sh
               run: ./hello.sh
@@ -51,6 +51,8 @@ jobs:
                 printf "\n\nmethod 5\n\n"
                 git diff --name-only --diff-filter=ACMRT ${{ github.event.pull_request.base.sha }}..${{ github.sha }}
                 # GH API: https://docs.github.com/en/rest/reference/pulls#list-pull-requests-files
+                printf "\n\nmethod 6\n\n"
+                git diff-tree --no-commit-id -r ${{ github.sha }}
                 
                 
                 echo "git sha: ${{ github.sha }}"
