@@ -25,6 +25,11 @@ jobs:
             - name: Checkout
               uses: actions/checkout@v2
               
+            - name: Debug event
+              env:
+                - GITHUB_EVENT: ${{ github.event }}
+              run: echo $GITHUB_EVENT
+              
             - name: Run hello.sh
               run: ./hello.sh
             
