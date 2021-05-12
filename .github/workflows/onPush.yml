@@ -23,6 +23,8 @@ jobs:
         
         steps:
             - name: Checkout
+              with:
+                fetch-depth: 2
               uses: actions/checkout@v2
               
             # - name: Debug github object
